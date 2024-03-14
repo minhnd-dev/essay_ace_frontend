@@ -1,4 +1,5 @@
 FROM node:21 
-COPY . /app
 WORKDIR /app
+COPY . /app
+RUN npm install
 EXPOSE 3000
