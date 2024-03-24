@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    button {
+        @apply block bg-black text-white rounded-lg shadow-2xl hover:bg-gray-800
+    }
+}
