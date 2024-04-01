@@ -1,7 +1,7 @@
 "use client";
 import { WritingFluently, BookOne, User, Logout } from "@icon-park/react";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface NavItem {
   label: string;
@@ -66,7 +66,7 @@ export default function RootTest({
         }
       }
       
-  }, [])
+  }, [pathName])
   function handleClickNavItem(item: NavItem) {
     setCurrentPage(item);
     item.handler();

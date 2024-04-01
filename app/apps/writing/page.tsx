@@ -92,18 +92,18 @@ function Timer() {
 
   return (
     <div className="flex bg-white border-2 hover:bg-white max-w-min shadow-none rounded-lg">
-      <div
+      <button
         onClick={(e) => setPausing(!pausing)}
-        className="cursor-pointer p-2 border-r-2"
+        className="bg-white p-2 border-none hover:bg-gray-100 max-w-min shadow-none"
       >
         {pausing ? (
           <PlayOne theme="outline" size="24" fill="#333" />
         ) : (
           <Pause theme="outline" size="24" fill="#333" />
         )}
-      </div>
+      </button>
 
-      <div className="flex p-2 pl-[1px] gap-2">
+      <div className="flex p-2 border-l-2 pl-[1px] gap-2 items-center">
         <div className="flex">
           <input
             type="text"
