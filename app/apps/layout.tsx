@@ -26,8 +26,8 @@ export default function RootTest({
     },
     {
       icon: <BookOne theme="outline" size="24" fill="#333" />,
-      label: "Từ điển",
-      handler: handleClickDictionary,
+      label: "Lịch sử",
+      handler: handleClickHistory,
     },
   ];
 
@@ -52,8 +52,8 @@ export default function RootTest({
           "path": "/apps/writing"
         },
         {
-          "label": "Từ điển",
-          "path": "/apps/dictionary"
+          "label": "Lịch sử",
+          "path": "/apps/history"
         },
         {
           "label": "Tài khoản",
@@ -75,8 +75,8 @@ export default function RootTest({
   function handleClickWriting() {
     router.push("/apps/writing");
   }
-  function handleClickDictionary() {
-    router.push("/apps/dictionary");
+  function handleClickHistory() {
+    router.push("/apps/history");
   }
   function handleClickAccount() {
     router.push("/apps/account");
@@ -120,7 +120,7 @@ export default function RootTest({
           ))}
         </div>
       </div>
-      <div className="w-full">{children}</div>
+      <div className="w-full max-h-[100vh] overflow-auto">{children}</div>
     </div>
   );
 }

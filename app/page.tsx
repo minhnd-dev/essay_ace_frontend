@@ -3,10 +3,9 @@
 export default function Home() {
 
   return (
-    <div className="flex">
-      <div>The main page is here</div>
-      <button className="btn">Button</button>
+    <div>
+      <p className="mt-[100px] font-bold text-2xl text-center">This is the home page</p>
+      <p className="text-2xl text-center">Nothing to see here</p>
     </div>
   )
-    ;
 }
