@@ -4,6 +4,6 @@
 
 @layer base {
     button {
-        @apply btn block bg-black text-white rounded-lg shadow-2xl hover:bg-gray-700
+        @apply block bg-black text-white rounded-lg shadow-2xl hover:bg-gray-700
     }
 }

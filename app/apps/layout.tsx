@@ -87,7 +87,10 @@ export default function RootTest({
   function handleClickAccount() {
     router.push("/apps/account");
   }
-  function handleClickLogout() {}
+  function handleClickLogout() {
+    localStorage.removeItem("token");
+    router.push("/login");
+  }
 
   return (
     <div className="flex">
