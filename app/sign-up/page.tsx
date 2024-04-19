@@ -2,6 +2,7 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { PreviewClose, PreviewOpen, Success } from "@icon-park/react";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button"
 
 export default function SignUp() {
   const router = useRouter()
@@ -22,9 +23,9 @@ export default function SignUp() {
               <p className="my-auto text-2xl font-bold">Đăng ký thành công!</p>
             </div>
             <p className="text-center">Cảm ơn bạn đã tham gia hệ thống của chúng tôi. Ấn nút đăng nhập để bắt đầu hành trình cải thiện kĩ năng viết tiếng anh của bạn ;	&#41;</p>
-            <button onClick={goToLogin} className="mx-auto my-4 block bg-black text-white rounded-l shadow-3xl px-4 py-2 text-xl hover:bg-gray-800">
+            <Button onClick={goToLogin} className="mx-auto my-4 block bg-black text-white rounded-l shadow-3xl px-4 py-2 text-xl hover:bg-gray-800">
               Đăng nhập
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -187,9 +188,9 @@ function SignUpForm({ setRegisterSuccess } : {setRegisterSuccess: Dispatch<SetSt
                 {retypeWrong && (
                   <p className="text-red-600">Mật khẩu chưa trùng khớp</p>
                 )}
-                <button onClick={register} className="w-full mx-auto px-4 py-2 text-xl">
+                <Button onClick={register} className="w-full mx-auto px-4 py-2 text-xl">
                   Đăng ký
-                </button>
+                </Button>
                 <p className="text-center italic text-gray-400">
                   Bạn đã có tài khoản?{" "}
                   <a href="/login" className="text-black">

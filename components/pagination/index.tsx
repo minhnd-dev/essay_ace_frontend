@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "@/components/ui/button"
 
 interface PaginationProps {
   // children: React.ReactNode;
@@ -31,8 +32,8 @@ export default function Pagination(props: PaginationProps) {
     <div className="join m-auto">
       {
         pages.map((page, index) => (
-          <button key={index} className={`join-item btn ${currentPage.toString() === page ? "btn-active" : ""}`}
-                  onClick={() => setCurrentPage(parseInt(page))}>{page}</button>
+          <Button key={index} className={`join-item btn ${currentPage.toString() === page ? "btn-active" : ""}`}
+                  onClick={() => setCurrentPage(parseInt(page))}>{page}</Button>
         ))
       }
     </div>

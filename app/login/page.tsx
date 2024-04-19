@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { PreviewClose, PreviewOpen } from "@icon-park/react";
-
+import { Button } from "@/components/ui/button"
 export default function Login() {
   const router = useRouter();
   const [userName, setUserName] = useState("");
@@ -78,12 +78,12 @@ export default function Login() {
                     Tên đăng nhập hoặc mật khẩu chưa đúng
                   </p>
                 )}
-                <button
+                <Button
                   onClick={login}
                   className="w-full mx-auto px-4 py-2 text-xl"
                 >
                   Đăng nhập
-                </button>
+                </Button>
                 <p className="text-center italic text-gray-400">
                   Bạn chưa có tài khoản?{" "}
                   <a href="/sign-up" className="text-black">

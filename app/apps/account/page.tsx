@@ -1,5 +1,5 @@
 "use client";
-
+import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react";
 export default function Account() {
   return (
@@ -56,7 +56,7 @@ function ChangePassword() {
           className="col-span-2 bg-gray-100 text-l rounded-l p-2 w-full"
           onChange={(e) => setRetypeNewPwd(e.target.value)}
         />
-        <button className="col-span-1">Lưu</button>
+        <Button className="col-span-1">Lưu</Button>
       </div>
       {errorMsg !== "" && <p className="text-red-600 text-sm">{errorMsg}</p>}
       {errorMsg2 !== "" && <p className="text-red-600 text-sm">{errorMsg2}</p>}

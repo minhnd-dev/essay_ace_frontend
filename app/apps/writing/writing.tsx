@@ -3,6 +3,7 @@
 import {Refresh, AlarmClock, PlayOne, Pause} from "@icon-park/react";
 import {useEffect, useState} from "react";
 import fetchWithToken from "@/app/utils/api";
+import {Button} from "@/components/ui/button";
 
 export default function Writing({topicIdProp = null}: { topicIdProp: number | null }) {
   const [question, setQuestion] = useState();
@@ -111,10 +112,10 @@ export default function Writing({topicIdProp = null}: { topicIdProp: number | nu
         }
       </div>
       <div className="mt-2 flex justify-between">
-        <button className="bg-white p-2 border-[1px] hover:bg-gray-100 max-w-min shadow-none"
+        <Button className="bg-white p-2 border-[1px] hover:bg-gray-100 max-w-min shadow-none"
                 onClick={handleRefreshQuestion}>
           <Refresh theme="outline" size="24" fill="#333"/>
-        </button>
+        </Button>
         <WordCounter text={response}/>
         {/*<Timer/>*/}
       </div>
@@ -132,10 +133,10 @@ export default function Writing({topicIdProp = null}: { topicIdProp: number | nu
       </div>
       <div className="flex justify-between">
         <div className="flex">
-          <button className="m-2 my-4 ml-0 px-4 py-2 bg-gray-300 text-black hover:bg-black hover:text-white"
+          <Button className="m-2 my-4 ml-0 px-4 py-2 bg-gray-300 text-black hover:bg-black hover:text-white"
                   onClick={save}>Lưu
-          </button>
-          {savedAt && <button className="m-2 my-4 px-4 py-2" onClick={getAIFeedback}>Đánh giá với AI ✨</button>}
+          </Button>
+          {savedAt && <Button className="m-2 my-4 px-4 py-2" onClick={getAIFeedback}>Đánh giá với AI ✨</Button>}
 
         </div>
         {savedAt && <p className="m-2 my-4 py-2">Đã lưu lúc {savedAt}</p>}
@@ -162,7 +163,7 @@ function WordCounter({text}: { text: string }) {
       Mục tiêu:  &nbsp;
       {countWords()} /
       <input type="number"
-             className="max-w-8 ml-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+             className="max-w-8 ml-2 [appearance:textfield] [&::-webkit-outer-spin-Button]:appearance-none [&::-webkit-inner-spin-Button]:appearance-none"
              value={target} onChange={(e) => setTarget(e.target.value)}/> từ
     </div>
   );
@@ -212,7 +213,7 @@ function Timer() {
 
   return (
     <div className="flex bg-white border-[1px] hover:bg-white max-w-min shadow-none rounded-lg">
-      <button
+      <Button
         onClick={(e) => setPausing(!pausing)}
         className="bg-white p-2 border-none hover:bg-gray-100 max-w-min shadow-none"
       >
@@ -221,7 +222,7 @@ function Timer() {
         ) : (
           <Pause theme="outline" size="24" fill="#333"/>
         )}
-      </button>
+      </Button>
 
       <div className="flex p-2 border-l-[1px] pl-[1px] gap-2 items-center">
         <div className="flex">
