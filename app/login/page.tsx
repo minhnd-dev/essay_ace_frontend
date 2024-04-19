@@ -24,8 +24,8 @@ export default function Login() {
 
     if (response.ok) {
       const data = await response.json();
-      router.push("/");
-      console.log(data);
+      localStorage.setItem("token", data.token);
+      router.push("/apps/writing");
     } else {
       setAuthFailed(true);
     }

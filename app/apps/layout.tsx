@@ -13,6 +13,12 @@ export default function RootTest({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  if (typeof window !== "undefined") {
+    let token = localStorage.getItem("token");
+    if (!token) {
+      window.location.href = "/login";
+    }
+  }
   const pathName = usePathname();
   
   const router = useRouter();
