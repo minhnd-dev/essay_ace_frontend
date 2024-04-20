@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react";
+import fetchWithToken from "@/app/utils/api";
 export default function Account() {
   return (
     <div className="m-auto max-w-[1000px]">
@@ -13,10 +14,34 @@ export default function Account() {
 }
 
 function ChangePassword() {
+  const [oldPwd, setOldPwd] = useState("");
   const [newPwd, setNewPwd] = useState("");
   const [retypeNewPwd, setRetypeNewPwd] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [errorMsg2, setErrorMsg2] = useState("");
+
+  function changePassword() {
+    fetchWithToken(
+      "http://localhost:5000/auth/change-password",
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          password: oldPwd,
+          new_password: newPwd,
+        }),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        alert("Đổi mật khẩu thành công")
+      }
+    ).catch((err) => {
+      alert("Đã có lỗi xảy ra")
+    })
+  }
 
   useEffect(() => {
     if (newPwd.length < 8 || newPwd.length >= 128) {
@@ -43,6 +68,7 @@ function ChangePassword() {
           type="password"
           placeholder="Mật khẩu cũ"
           className="col-span-2 bg-gray-100 text-l rounded-l p-2 w-full"
+          onChange={(e) => setOldPwd(e.target.value)}
         />
         <input
           type="password"
@@ -56,7 +82,7 @@ function ChangePassword() {
           className="col-span-2 bg-gray-100 text-l rounded-l p-2 w-full"
           onChange={(e) => setRetypeNewPwd(e.target.value)}
         />
-        <Button className="col-span-1">Lưu</Button>
+        <Button className="col-span-1" onClick={changePassword}>Lưu</Button>
       </div>
       {errorMsg !== "" && <p className="text-red-600 text-sm">{errorMsg}</p>}
       {errorMsg2 !== "" && <p className="text-red-600 text-sm">{errorMsg2}</p>}

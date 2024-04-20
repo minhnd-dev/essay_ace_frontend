@@ -107,7 +107,7 @@ export default function Writing({topicIdProp = null}: { topicIdProp: number | nu
   return (
     <div className="mt-8 m-auto max-w-[1080px] px-4">
       <div className="border-[1px] p-3 rounded-xl font-bold w-full">
-        {loadingQuestion ? <span className="loading loading-spinner loading-sm text-center"></span> :
+        {loadingQuestion ? "Đang tải..." :
           <textarea className="rounded-xl font-bold w-full outline-none" value={question}></textarea>
         }
       </div>
@@ -142,7 +142,7 @@ export default function Writing({topicIdProp = null}: { topicIdProp: number | nu
         {savedAt && <p className="m-2 my-4 py-2">Đã lưu lúc {savedAt}</p>}
       </div>
       <div>
-        {loadingAIFeedback ? <span className="loading loading-spinner loading-sm text-center"></span> :
+        {loadingAIFeedback ? "Đang tải..." :
           AIFeedBack &&
             <textarea className="w-full outline-none h-[800px]" value={AIFeedBack}></textarea>
         }
