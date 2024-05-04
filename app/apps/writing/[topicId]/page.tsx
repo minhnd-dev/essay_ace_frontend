@@ -2,6 +2,10 @@
 
 import Writing from "@/app/apps/writing/writing";
 
-export default function WritingDetail({params}){
+interface WritingDetailParams {
+  topicId: number;
+}
+
+export default function WritingDetail({params} : {params: WritingDetailParams}){
   return <Writing topicIdProp={params?.topicId}/>
 }
